@@ -1,0 +1,2541 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="CCTV PRO Bolivia - Instalación de cámaras de seguridad, cursos, servicios y tienda de equipos CCTV.">
+
+<title>CCTV PRO Bolivia | Seguridad, Cursos y Tecnología</title>
+
+<style>
+:root{
+    --primary:#0b63f6;
+    --secondary:#07152d;
+    --dark:#050b18;
+    --light:#f4f7fb;
+    --white:#fff;
+    --text:#172033;
+    --muted:#667085;
+    --success:#16a34a;
+    --danger:#ef4444;
+    --shadow:0 15px 40px rgba(0,0,0,.10);
+    --radius:18px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--light);
+    color:var(--text);
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,input,select,textarea{
+    font:inherit;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(5,11,24,.97);
+    backdrop-filter:blur(10px);
+    color:white;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+.nav-container{
+    max-width:1200px;
+    margin:auto;
+    min-height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 20px;
+    gap:20px;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:900;
+    display:flex;
+    align-items:center;
+    gap:9px;
+    white-space:nowrap;
+}
+
+.logo-icon{
+    width:40px;
+    height:40px;
+    border-radius:12px;
+    background:var(--primary);
+    display:grid;
+    place-items:center;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.nav-links a{
+    color:#dbe5f5;
+    font-size:14px;
+    font-weight:600;
+    transition:.2s;
+}
+
+.nav-links a:hover{
+    color:#4ea1ff;
+}
+
+.cart-btn{
+    border:0;
+    cursor:pointer;
+    color:white;
+    background:var(--primary);
+    padding:11px 16px;
+    border-radius:12px;
+    font-weight:bold;
+}
+
+.cart-count{
+    background:#fff;
+    color:var(--primary);
+    border-radius:50%;
+    min-width:22px;
+    height:22px;
+    display:inline-grid;
+    place-items:center;
+    margin-left:5px;
+    font-size:12px;
+}
+
+.menu-btn{
+    display:none;
+    background:none;
+    border:0;
+    color:white;
+    font-size:25px;
+    cursor:pointer;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:650px;
+    display:flex;
+    align-items:center;
+    background:
+        linear-gradient(110deg,rgba(5,11,24,.98),rgba(5,11,24,.76)),
+        radial-gradient(circle at 80% 30%,#1259d8,transparent 35%);
+    color:white;
+    overflow:hidden;
+}
+
+.hero-container{
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+    padding:70px 20px;
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:50px;
+    align-items:center;
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 13px;
+    background:rgba(11,99,246,.18);
+    border:1px solid rgba(90,160,255,.4);
+    border-radius:30px;
+    color:#8fc1ff;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(42px,6vw,72px);
+    line-height:1.03;
+    margin-bottom:22px;
+}
+
+.hero h1 span{
+    color:#4ea1ff;
+}
+
+.hero p{
+    color:#c8d3e5;
+    font-size:18px;
+    max-width:650px;
+    margin-bottom:30px;
+}
+
+.buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:13px;
+}
+
+.btn{
+    border:0;
+    cursor:pointer;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:14px 20px;
+    border-radius:13px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.btn-primary{
+    background:var(--primary);
+    color:white;
+}
+
+.btn-primary:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 25px rgba(11,99,246,.35);
+}
+
+.btn-outline{
+    color:white;
+    border:1px solid #40516e;
+    background:rgba(255,255,255,.05);
+}
+
+.btn-outline:hover{
+    background:rgba(255,255,255,.12);
+}
+
+.camera-card{
+    position:relative;
+    min-height:390px;
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:28px;
+    background:linear-gradient(145deg,#132644,#071225);
+    box-shadow:0 30px 80px rgba(0,0,0,.35);
+    display:grid;
+    place-items:center;
+    overflow:hidden;
+}
+
+.hero-camera{
+    width:85%;
+    max-width:450px;
+    height:280px;
+    object-fit:contain;
+    filter:drop-shadow(0 25px 25px rgba(0,0,0,.5));
+}
+
+/* =========================
+   SECCIONES
+========================= */
+
+section{
+    padding:85px 20px;
+}
+
+.section-container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 45px;
+}
+
+.section-title small{
+    color:var(--primary);
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.section-title h2{
+    font-size:38px;
+    line-height:1.15;
+    margin:10px 0;
+}
+
+.section-title p{
+    color:var(--muted);
+}
+
+/* =========================
+   FEATURES
+========================= */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.feature{
+    background:white;
+    padding:28px;
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+}
+
+.feature-icon{
+    width:55px;
+    height:55px;
+    border-radius:15px;
+    background:#e9f2ff;
+    color:var(--primary);
+    display:grid;
+    place-items:center;
+    font-size:25px;
+    margin-bottom:18px;
+}
+
+.feature h3{
+    margin-bottom:8px;
+}
+
+.feature p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* =========================
+   CURSOS
+========================= */
+
+.courses{
+    background:white;
+}
+
+.course-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+}
+
+.course{
+    border:1px solid #e4e9f1;
+    border-radius:18px;
+    overflow:hidden;
+    background:white;
+    transition:.25s;
+}
+
+.course:hover{
+    transform:translateY(-5px);
+    box-shadow:var(--shadow);
+}
+
+.course-image{
+    height:210px;
+    background:#07152d;
+    overflow:hidden;
+}
+
+.course-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.course-content{
+    padding:23px;
+}
+
+.level{
+    color:var(--primary);
+    font-size:12px;
+    font-weight:800;
+}
+
+.course h3{
+    margin:8px 0;
+}
+
+.course p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+.course-info{
+    display:flex;
+    justify-content:space-between;
+    margin:15px 0;
+    color:#687386;
+    font-size:13px;
+}
+
+.price{
+    font-size:25px;
+    font-weight:900;
+    margin-bottom:15px;
+}
+
+/* =========================
+   SERVICIOS
+========================= */
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.service{
+    background:white;
+    padding:0 0 30px;
+    border-radius:20px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+}
+
+.service-image{
+    width:100%;
+    height:210px;
+    object-fit:cover;
+}
+
+.service-content{
+    padding:25px 30px 0;
+}
+
+.service h3{
+    margin-bottom:8px;
+}
+
+.service p{
+    color:var(--muted);
+    font-size:14px;
+    margin-bottom:18px;
+}
+
+.service ul{
+    list-style:none;
+    color:#4b5565;
+    font-size:14px;
+}
+
+.service li{
+    margin:8px 0;
+}
+
+/* =========================
+   TIENDA
+========================= */
+
+.shop{
+    background:#eef3f9;
+}
+
+.shop-toolbar{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    margin-bottom:30px;
+    flex-wrap:wrap;
+}
+
+.search{
+    flex:1;
+    min-width:220px;
+    padding:14px 17px;
+    border:1px solid #d5dce7;
+    border-radius:12px;
+    outline:none;
+    background:white;
+}
+
+.filter{
+    padding:14px;
+    border:1px solid #d5dce7;
+    border-radius:12px;
+    background:white;
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.product{
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
+    transition:.25s;
+}
+
+.product:hover{
+    transform:translateY(-5px);
+    box-shadow:var(--shadow);
+}
+
+.product-image{
+    height:220px;
+    background:#edf2f7;
+    overflow:hidden;
+}
+
+.product-image img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    padding:12px;
+    transition:.3s;
+}
+
+.product:hover .product-image img{
+    transform:scale(1.05);
+}
+
+.product-body{
+    padding:18px;
+}
+
+.product-category{
+    color:var(--primary);
+    font-size:11px;
+    font-weight:bold;
+    text-transform:uppercase;
+}
+
+.product h3{
+    font-size:17px;
+    margin:5px 0;
+}
+
+.product-description{
+    font-size:13px;
+    color:var(--muted);
+    min-height:42px;
+}
+
+.product-bottom{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-top:14px;
+}
+
+.product-price{
+    font-size:20px;
+    font-weight:900;
+}
+
+.add-cart{
+    border:0;
+    background:var(--primary);
+    color:white;
+    width:42px;
+    height:42px;
+    border-radius:11px;
+    cursor:pointer;
+    font-size:20px;
+}
+
+.add-cart:hover{
+    transform:scale(1.05);
+}
+
+/* =========================
+   CONTACTO
+========================= */
+
+.contact{
+    background:var(--secondary);
+    color:white;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:start;
+}
+
+.contact .section-title{
+    text-align:left;
+    margin:0 0 25px;
+}
+
+.contact .section-title p{
+    color:#aebbd0;
+}
+
+.contact-info{
+    display:grid;
+    gap:15px;
+}
+
+.contact-item{
+    display:flex;
+    gap:15px;
+    align-items:center;
+    padding:18px;
+    background:rgba(255,255,255,.06);
+    border-radius:15px;
+}
+
+.contact-form{
+    background:white;
+    color:var(--text);
+    padding:30px;
+    border-radius:22px;
+}
+
+.form-group{
+    margin-bottom:15px;
+}
+
+.form-group label{
+    display:block;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:6px;
+}
+
+.form-group input,
+.form-group textarea{
+    width:100%;
+    border:1px solid #d5dce7;
+    border-radius:10px;
+    padding:13px;
+    outline:none;
+}
+
+.form-group textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#030812;
+    color:#8d9bb0;
+    padding:30px 20px;
+    text-align:center;
+    font-size:14px;
+}
+
+/* =========================
+   CARRITO
+========================= */
+
+.cart-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.5);
+    z-index:2000;
+    display:none;
+}
+
+.cart-overlay.active{
+    display:block;
+}
+
+.cart{
+    position:absolute;
+    right:0;
+    top:0;
+    width:min(430px,100%);
+    height:100%;
+    background:white;
+    color:var(--text);
+    display:flex;
+    flex-direction:column;
+}
+
+.cart-header{
+    padding:20px;
+    border-bottom:1px solid #e5e7eb;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.close-cart{
+    border:0;
+    background:#eef2f7;
+    width:38px;
+    height:38px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:20px;
+}
+
+.cart-items{
+    flex:1;
+    overflow:auto;
+    padding:20px;
+}
+
+.empty{
+    text-align:center;
+    color:var(--muted);
+    padding:50px 20px;
+}
+
+.cart-item{
+    display:flex;
+    gap:12px;
+    padding:14px 0;
+    border-bottom:1px solid #edf0f4;
+}
+
+.cart-item-icon{
+    width:65px;
+    height:65px;
+    border-radius:12px;
+    background:#edf3fa;
+    overflow:hidden;
+    flex-shrink:0;
+}
+
+.cart-item-icon img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+.cart-item-info{
+    flex:1;
+}
+
+.cart-item-info h4{
+    font-size:14px;
+}
+
+.cart-item-price{
+    font-weight:bold;
+    margin-top:5px;
+}
+
+.quantity{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-top:7px;
+}
+
+.quantity button{
+    border:0;
+    background:#edf2f7;
+    width:27px;
+    height:27px;
+    border-radius:7px;
+    cursor:pointer;
+}
+
+.remove{
+    color:var(--danger);
+    background:none!important;
+}
+
+.cart-footer{
+    border-top:1px solid #e5e7eb;
+    padding:20px;
+}
+
+.total{
+    display:flex;
+    justify-content:space-between;
+    font-size:22px;
+    font-weight:900;
+    margin-bottom:15px;
+}
+
+.checkout{
+    width:100%;
+}
+
+/* =========================
+   TOAST
+========================= */
+
+.toast{
+    position:fixed;
+    bottom:25px;
+    left:50%;
+    transform:translate(-50%,100px);
+    background:#111827;
+    color:white;
+    padding:13px 18px;
+    border-radius:12px;
+    z-index:3000;
+    opacity:0;
+    transition:.3s;
+}
+
+.toast.show{
+    transform:translate(-50%,0);
+    opacity:1;
+}
+
+/* =========================
+   WHATSAPP
+========================= */
+
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:#25d366;
+    color:white;
+    display:grid;
+    place-items:center;
+    font-size:28px;
+    z-index:1500;
+    box-shadow:0 8px 25px rgba(37,211,102,.4);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1000px){
+
+    .features{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .product-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .hero-container,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .camera-card{
+        max-width:600px;
+        width:100%;
+        margin:auto;
+    }
+}
+
+@media(max-width:760px){
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:72px;
+        left:0;
+        right:0;
+        background:#050b18;
+        padding:20px;
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .nav-container .cart-btn{
+        margin-left:auto;
+    }
+
+    .course-grid,
+    .service-grid,
+    .features,
+    .product-grid{
+        grid-template-columns:1fr;
+    }
+
+    section{
+        padding:65px 16px;
+    }
+
+    .hero{
+        min-height:auto;
+    }
+
+    .hero-container{
+        padding:70px 16px;
+    }
+
+    .hero h1{
+        font-size:44px;
+    }
+
+    .camera-card{
+        min-height:300px;
+    }
+
+    .section-title h2{
+        font-size:31px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <a href="#inicio" class="logo">
+            <span class="logo-icon">📹</span>
+            CCTV PRO
+        </a>
+
+        <button
+            class="menu-btn"
+            type="button"
+            onclick="toggleMenu()">
+            ☰
+        </button>
+
+        <nav class="nav-links" id="navLinks">
+
+            <a href="#inicio">Inicio</a>
+            <a href="#cursos">Cursos</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#tienda">Tienda</a>
+            <a href="#contacto">Contacto</a>
+
+        </nav>
+
+        <button
+            class="cart-btn"
+            type="button"
+            onclick="openCart()">
+
+            🛒 Carrito
+            <span class="cart-count" id="cartCount">0</span>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="inicio">
+
+    <div class="hero-container">
+
+        <div>
+
+            <span class="badge">
+                🔐 SOLUCIONES PROFESIONALES DE SEGURIDAD
+            </span>
+
+            <h1>
+                Aprende. Instala.<br>
+                <span>Protege.</span>
+            </h1>
+
+            <p>
+                Aprende a instalar cámaras de seguridad desde cero,
+                adquiere equipos profesionales y encuentra servicios
+                de instalación y mantenimiento.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#cursos"
+                   class="btn btn-primary">
+                    🎓 Ver cursos
+                </a>
+
+                <a href="#tienda"
+                   class="btn btn-outline">
+                    🛒 Visitar tienda
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="camera-card">
+
+            <img
+                class="hero-camera"
+                src="Camara IP 2MP.png"
+                alt="Cámara de seguridad CCTV"
+                onerror="this.style.display='none';">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FEATURES
+========================= -->
+
+<section>
+
+    <div class="section-container">
+
+        <div class="section-title">
+
+            <small>¿Por qué nosotros?</small>
+
+            <h2>
+                Todo lo que necesitas para entrar al mundo CCTV
+            </h2>
+
+            <p>
+                Formación, equipos y servicios reunidos
+                en una sola plataforma.
+            </p>
+
+        </div>
+
+        <div class="features">
+
+            <div class="feature">
+
+                <div class="feature-icon">🎓</div>
+
+                <h3>Aprende desde cero</h3>
+
+                <p>
+                    Cursos prácticos para principiantes
+                    y técnicos que quieren mejorar sus conocimientos.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">📹</div>
+
+                <h3>Equipos CCTV</h3>
+
+                <p>
+                    Cámaras, DVR, NVR, cables,
+                    fuentes y accesorios.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">🛠️</div>
+
+                <h3>Servicios</h3>
+
+                <p>
+                    Instalación, configuración,
+                    mantenimiento y asesoramiento.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">📱</div>
+
+                <h3>Soporte</h3>
+
+                <p>
+                    Ayuda para configurar equipos
+                    y solucionar problemas.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CURSOS
+========================= -->
+
+<section class="courses" id="cursos">
+
+    <div class="section-container">
+
+        <div class="section-title">
+
+            <small>Formación profesional</small>
+
+            <h2>
+                Aprende instalación de cámaras
+            </h2>
+
+            <p>
+                Cursos diseñados para aprender de forma práctica.
+            </p>
+
+        </div>
+
+
+        <div class="course-grid">
+
+
+            <!-- CURSO 1 -->
+
+            <article class="course">
+
+                <div class="course-image">
+
+                    <img
+                        src="Instalación CCTV desde cero.jpg"
+                        alt="Curso de instalación CCTV"
+                        onerror="this.src='https://via.placeholder.com/800x450?text=Curso+CCTV';">
+
+                </div>
+
+                <div class="course-content">
+
+                    <span class="level">
+                        NIVEL BÁSICO
+                    </span>
+
+                    <h3>
+                        Instalación CCTV desde cero
+                    </h3>
+
+                    <p>
+                        Aprende herramientas, cableado,
+                        cámaras, fuentes y configuración básica.
+                    </p>
+
+                    <div class="course-info">
+                        <span>⏱️ 8 horas</span>
+                        <span>📚 12 clases</span>
+                    </div>
+
+                    <div class="price">
+                        Bs 199,00
+                    </div>
+
+                    <button
+                        class="btn btn-primary"
+                        type="button"
+                        onclick="addCourse('Curso CCTV Básico',199,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeeNbtl4JLfCKp64qgexfu5XxQ6osh7wQtL5kyaLv03g&s=10')">
+
+                        Inscribirme
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- CURSO 2 -->
+
+            <article class="course">
+
+                <div class="course-image">
+
+                    <img
+                        src="DVR, NVR y acceso remoto.png"
+                        alt="Curso DVR NVR"
+                        onerror="this.src='https://via.placeholder.com/800x450?text=DVR+NVR';">
+
+                </div>
+
+                <div class="course-content">
+
+                    <span class="level">
+                        NIVEL INTERMEDIO
+                    </span>
+
+                    <h3>
+                        DVR, NVR y acceso remoto
+                    </h3>
+
+                    <p>
+                        Configura grabadores, redes,
+                        aplicaciones móviles y acceso remoto.
+                    </p>
+
+                    <div class="course-info">
+                        <span>⏱️ 10 horas</span>
+                        <span>📚 15 clases</span>
+                    </div>
+
+                    <div class="price">
+                        Bs 299,00
+                    </div>
+
+                    <button
+                        class="btn btn-primary"
+                        type="button"
+                        onclick="addCourse('Curso DVR y NVR',299,'https://static.wixstatic.com/media/420f35_03760e2323bd408b8dc96b547111e627~mv2.png/v1/fill/w_1000,h_671,al_c,q_90,usm_0.66_1.00_0.01/420f35_03760e2323bd408b8dc96b547111e627~mv2.png')">
+
+                        Inscribirme
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- CURSO 3 -->
+
+            <article class="course">
+
+                <div class="course-image">
+
+                    <img
+                        src="CCTV profesional y redes.jpg"
+                        alt="Curso CCTV IP y redes"
+                        onerror="this.src='https://via.placeholder.com/800x450?text=CCTV+IP';">
+
+                </div>
+
+                <div class="course-content">
+
+                    <span class="level">
+                        NIVEL AVANZADO
+                    </span>
+
+                    <h3>
+                        CCTV profesional y redes
+                    </h3>
+
+                    <p>
+                        Aprende redes IP, PoE, VLAN,
+                        cámaras IP y proyectos profesionales.
+                    </p>
+
+                    <div class="course-info">
+                        <span>⏱️ 18 horas</span>
+                        <span>📚 25 clases</span>
+                    </div>
+
+                    <div class="price">
+                        Bs 399,00
+                    </div>
+
+                    <button
+                        class="btn btn-primary"
+                        type="button"
+                        onclick="addCourse('Curso CCTV Profesional',399,'https://www.discount-security-cameras.net/images/articles/diagram_ip_system.jpg')">
+
+                        Inscribirme
+
+                    </button>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SERVICIOS
+========================= -->
+
+<section id="servicios">
+
+    <div class="section-container">
+
+        <div class="section-title">
+
+            <small>Nuestros servicios</small>
+
+            <h2>
+                Protección para hogares y negocios
+            </h2>
+
+            <p>
+                Soluciones adaptadas a las necesidades de cada cliente.
+            </p>
+
+        </div>
+
+
+        <div class="service-grid">
+
+
+            <div class="service">
+
+                <img
+                    class="service-image"
+                    src="Instalacion CCTV.png"
+                    alt="Instalación de cámaras CCTV"
+                    onerror="this.style.display='none';">
+
+                <div class="service-content">
+
+                    <h3>📷 Instalación CCTV</h3>
+
+                    <p>
+                        Instalación profesional de sistemas
+                        de videovigilancia.
+                    </p>
+
+                    <ul>
+                        <li>✓ Instalación de cámaras</li>
+                        <li>✓ Cableado</li>
+                        <li>✓ Configuración DVR/NVR</li>
+                        <li>✓ Acceso desde celular</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <div class="service">
+
+                <img
+                    class="service-image"
+                    src="Mantenimiento.jpg"
+                    alt="Mantenimiento CCTV"
+                    onerror="this.style.display='none';">
+
+                <div class="service-content">
+
+                    <h3>🔧 Mantenimiento</h3>
+
+                    <p>
+                        Revisamos y solucionamos problemas
+                        de sistemas existentes.
+                    </p>
+
+                    <ul>
+                        <li>✓ Diagnóstico</li>
+                        <li>✓ Limpieza de cámaras</li>
+                        <li>✓ Revisión de cableado</li>
+                        <li>✓ Configuración</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <div class="service">
+
+                <img
+                    class="service-image"
+                    src="Proyectos empresariales.jpg"
+                    alt="Proyecto empresarial CCTV"
+                    onerror="this.style.display='none';">
+
+                <div class="service-content">
+
+                    <h3>🏢 Proyectos empresariales</h3>
+
+                    <p>
+                        Diseño de sistemas CCTV para negocios,
+                        oficinas y establecimientos.
+                    </p>
+
+                    <ul>
+                        <li>✓ Diseño del proyecto</li>
+                        <li>✓ Cotización</li>
+                        <li>✓ Instalación</li>
+                        <li>✓ Soporte técnico</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     TIENDA
+========================= -->
+
+<section class="shop" id="tienda">
+
+    <div class="section-container">
+
+        <div class="section-title">
+
+            <small>Tienda online</small>
+
+            <h2>
+                Equipos y accesorios CCTV
+            </h2>
+
+            <p>
+                Selecciona tus productos y agrégalos al carrito.
+            </p>
+
+        </div>
+
+
+        <div class="shop-toolbar">
+
+            <input
+                type="text"
+                id="search"
+                class="search"
+                placeholder="🔍 Buscar producto..."
+                oninput="renderProducts()">
+
+
+            <select
+                id="category"
+                class="filter"
+                onchange="renderProducts()">
+
+                <option value="todos">
+                    Todas las categorías
+                </option>
+
+                <option value="camaras">
+                    Cámaras
+                </option>
+
+                <option value="grabadores">
+                    DVR / NVR
+                </option>
+
+                <option value="accesorios">
+                    Accesorios
+                </option>
+
+                <option value="kits">
+                    Kits CCTV
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div
+            class="product-grid"
+            id="productGrid">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACTO
+========================= -->
+
+<section class="contact" id="contacto">
+
+    <div class="section-container contact-grid">
+
+        <div>
+
+            <div class="section-title">
+
+                <small>Contáctanos</small>
+
+                <h2>
+                    ¿Necesitas una instalación?
+                </h2>
+
+                <p>
+                    Escríbenos para solicitar información,
+                    asesoramiento o una cotización.
+                </p>
+
+            </div>
+
+
+            <div class="contact-info">
+
+                <div class="contact-item">
+
+                    <span>📞</span>
+
+                    <div>
+                        <strong>Teléfono</strong>
+                        <p>+591 63762573</p>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <span>📧</span>
+
+                    <div>
+                        <strong>Email</strong>
+                        <p>penarandagarciaeduin@gmail.com</p>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <span>📍</span>
+
+                    <div>
+                        <strong>Ubicación</strong>
+                        <p>Bolivia</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <form
+            class="contact-form"
+            onsubmit="sendMessage(event)">
+
+            <h3>
+                Solicitar información
+            </h3>
+
+            <br>
+
+            <div class="form-group">
+
+                <label>Nombre</label>
+
+                <input
+                    id="name"
+                    type="text"
+                    required
+                    placeholder="Tu nombre">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Teléfono</label>
+
+                <input
+                    id="phone"
+                    type="tel"
+                    required
+                    placeholder="Tu teléfono">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Mensaje</label>
+
+                <textarea
+                    id="message"
+                    required
+                    placeholder="¿Qué servicio necesitas?"></textarea>
+
+            </div>
+
+
+            <button
+                class="btn btn-primary"
+                type="submit">
+
+                📲 Enviar por WhatsApp
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <p>
+        © <span id="year"></span> CCTV PRO.
+        Todos los derechos reservados.
+    </p>
+
+    <p>
+        Seguridad • Tecnología • Formación
+    </p>
+
+</footer>
+
+
+<!-- =========================
+     WHATSAPP
+========================= -->
+
+<a
+    class="whatsapp"
+    href="https://wa.me/59163762573"
+    target="_blank"
+    rel="noopener"
+    title="Contactar por WhatsApp">
+
+    💬
+
+</a>
+
+
+<!-- =========================
+     CARRITO
+========================= -->
+
+<div
+    class="cart-overlay"
+    id="cartOverlay"
+    onclick="closeCartOutside(event)">
+
+    <aside class="cart">
+
+        <div class="cart-header">
+
+            <h2>
+                🛒 Mi carrito
+            </h2>
+
+            <button
+                class="close-cart"
+                type="button"
+                onclick="closeCart()">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <div
+            class="cart-items"
+            id="cartItems">
+
+            <div class="empty">
+                Tu carrito está vacío.
+            </div>
+
+        </div>
+
+
+        <div class="cart-footer">
+
+            <div class="total">
+
+                <span>Total</span>
+
+                <span id="cartTotal">
+                    Bs 0,00
+                </span>
+
+            </div>
+
+
+            <button
+                class="btn btn-primary checkout"
+                type="button"
+                onclick="checkout()">
+
+                Comprar / Solicitar pedido
+
+            </button>
+
+        </div>
+
+    </aside>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div
+    class="toast"
+    id="toast">
+</div>
+
+
+<script>
+
+/* =========================
+   CONFIGURACIÓN
+========================= */
+
+const WHATSAPP_NUMBER = "59163762573";
+
+
+/* =========================
+   PRODUCTOS
+========================= */
+
+const products = [
+
+    {
+        id:1,
+        name:"Cámara IP 2MP",
+        category:"camaras",
+        price:415,
+        image:"Camara IP 2MP.png",
+        description:"Cámara IP Full HD para interior y exterior."
+    },
+
+    {
+        id:2,
+        name:"Cámara IP 5MP",
+        category:"camaras",
+        price:780,
+        image:"Camaras IP 5MP.jpg",
+        description:"Cámara de alta resolución para vigilancia profesional."
+    },
+
+    {
+        id:3,
+        name:"DVR 8 Canales",
+        category:"grabadores",
+        price:549,
+        image:"DVR 8 Canales.jpg",
+        description:"Grabador digital para sistemas CCTV de 8 canales."
+    },
+
+    {
+        id:4,
+        name:"NVR 8 Canales PoE",
+        category:"grabadores",
+        price:890,
+        image:"NVR 8 Canales PoE.jpg",
+        description:"NVR PoE para cámaras IP y sistemas profesionales."
+    },
+
+    {
+        id:5,
+        name:"Fuente 12V 10A",
+        category:"accesorios",
+        price:85,
+        image:"Fuente 12V 10A.jpg",
+        description:"Fuente de alimentación para sistemas CCTV."
+    },
+
+    {
+        id:6,
+        name:"Disco Duro 1TB CCTV",
+        category:"accesorios",
+        price:450,
+        image:"Disco Duro 1TB CCTV.webp",
+        description:"Disco duro de 1TB para almacenamiento de grabaciones."
+    },
+
+    {
+        id:7,
+        name:"Cable UTP Cat6",
+        category:"accesorios",
+        price:240,
+        image:"Cable UTP Cat6.jpg",
+        description:"Cable de red Cat6 para instalaciones de cámaras IP."
+    },
+
+    {
+        id:8,
+        name:"Kit CCTV 4 Cámaras",
+        category:"kits",
+        price:1900,
+        image:"Kit CCTV 4 Camaras.jpg",
+        description:"Kit completo de videovigilancia para comenzar tu instalación."
+    }
+
+];
+
+
+/* =========================
+   CARRITO
+========================= */
+
+let cart = JSON.parse(
+    localStorage.getItem("cctvCart")
+) || [];
+
+
+/* =========================
+   FORMATO DE PRECIO
+========================= */
+
+function formatPrice(price){
+
+    return "Bs " +
+        Number(price).toLocaleString("es-BO",{
+            minimumFractionDigits:2,
+            maximumFractionDigits:2
+        });
+
+}
+
+
+/* =========================
+   MOSTRAR PRODUCTOS
+========================= */
+
+function renderProducts(){
+
+    const grid =
+        document.getElementById("productGrid");
+
+    const search =
+        document
+        .getElementById("search")
+        .value
+        .toLowerCase()
+        .trim();
+
+    const category =
+        document
+        .getElementById("category")
+        .value;
+
+
+    const filtered =
+        products.filter(product => {
+
+            const matchesSearch =
+                product.name
+                .toLowerCase()
+                .includes(search)
+
+                ||
+
+                product.description
+                .toLowerCase()
+                .includes(search);
+
+
+            const matchesCategory =
+                category === "todos" ||
+                product.category === category;
+
+
+            return matchesSearch &&
+                   matchesCategory;
+
+        });
+
+
+    if(filtered.length === 0){
+
+        grid.innerHTML = `
+
+            <div
+                style="
+                    grid-column:1/-1;
+                    text-align:center;
+                    padding:50px;
+                ">
+
+                <h3>
+                    No encontramos productos
+                </h3>
+
+                <p style="color:#667085">
+                    Prueba con otra búsqueda.
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    grid.innerHTML = filtered.map(product => `
+
+        <article class="product">
+
+            <div class="product-image">
+
+                <img
+                    src="${product.image}"
+                    alt="${product.name}"
+                    loading="lazy"
+                    onerror="this.src='https://via.placeholder.com/600x400?text=CCTV';">
+
+            </div>
+
+
+            <div class="product-body">
+
+                <span class="product-category">
+                    ${getCategoryName(product.category)}
+                </span>
+
+
+                <h3>
+                    ${product.name}
+                </h3>
+
+
+                <p class="product-description">
+                    ${product.description}
+                </p>
+
+
+                <div class="product-bottom">
+
+                    <span class="product-price">
+                        ${formatPrice(product.price)}
+                    </span>
+
+
+                    <button
+                        class="add-cart"
+                        type="button"
+                        onclick="addToCart(${product.id})">
+
+                        +
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    `).join("");
+
+}
+
+
+/* =========================
+   CATEGORÍAS
+========================= */
+
+function getCategoryName(category){
+
+    const names = {
+
+        camaras:"Cámaras",
+
+        grabadores:"DVR / NVR",
+
+        accesorios:"Accesorios",
+
+        kits:"Kits CCTV"
+
+    };
+
+    return names[category] || category;
+
+}
+
+
+/* =========================
+   AGREGAR PRODUCTO
+========================= */
+
+function addToCart(id){
+
+    const product =
+        products.find(p => p.id === id);
+
+
+    if(!product){
+        return;
+    }
+
+
+    const existing =
+        cart.find(item =>
+            item.id === id
+        );
+
+
+    if(existing){
+
+        existing.quantity++;
+
+    }else{
+
+        cart.push({
+
+            id:product.id,
+
+            name:product.name,
+
+            price:product.price,
+
+            image:product.image,
+
+            icon:"📹",
+
+            quantity:1
+
+        });
+
+    }
+
+
+    saveCart();
+
+    showToast(
+        "Producto agregado al carrito ✓"
+    );
+
+}
+
+
+/* =========================
+   AGREGAR CURSO
+========================= */
+
+function addCourse(name,price,image){
+
+    const existing =
+        cart.find(item =>
+            item.name === name
+        );
+
+
+    if(existing){
+
+        existing.quantity++;
+
+    }else{
+
+        cart.push({
+
+            id:"course-" + Date.now(),
+
+            name:name,
+
+            price:Number(price),
+
+            image:image,
+
+            icon:"🎓",
+
+            quantity:1
+
+        });
+
+    }
+
+
+    saveCart();
+
+    showToast(
+        "Curso agregado al carrito ✓"
+    );
+
+}
+
+
+/* =========================
+   GUARDAR CARRITO
+========================= */
+
+function saveCart(){
+
+    localStorage.setItem(
+        "cctvCart",
+        JSON.stringify(cart)
+    );
+
+    updateCart();
+
+}
+
+
+/* =========================
+   ACTUALIZAR CARRITO
+========================= */
+
+function updateCart(){
+
+    const count =
+        cart.reduce(
+            (sum,item) =>
+                sum + Number(item.quantity),
+            0
+        );
+
+
+    document.getElementById(
+        "cartCount"
+    ).textContent = count;
+
+
+    const container =
+        document.getElementById(
+            "cartItems"
+        );
+
+
+    if(cart.length === 0){
+
+        container.innerHTML = `
+
+            <div class="empty">
+
+                🛒<br><br>
+
+                Tu carrito está vacío.
+
+            </div>
+
+        `;
+
+    }else{
+
+        container.innerHTML =
+            cart.map((item,index) => `
+
+            <div class="cart-item">
+
+                <div class="cart-item-icon">
+
+                    ${
+                        item.image
+
+                        ?
+
+                        `<img
+                            src="${item.image}"
+                            alt="${item.name}"
+                            onerror="this.style.display='none';"
+                        >`
+
+                        :
+
+                        "📦"
+                    }
+
+                </div>
+
+
+                <div class="cart-item-info">
+
+                    <h4>
+                        ${item.name}
+                    </h4>
+
+
+                    <div class="cart-item-price">
+
+                        ${formatPrice(
+                            item.price *
+                            item.quantity
+                        )}
+
+                    </div>
+
+
+                    <div class="quantity">
+
+                        <button
+                            type="button"
+                            onclick="changeQuantity(${index},-1)">
+
+                            −
+
+                        </button>
+
+
+                        <strong>
+                            ${item.quantity}
+                        </strong>
+
+
+                        <button
+                            type="button"
+                            onclick="changeQuantity(${index},1)">
+
+                            +
+
+                        </button>
+
+
+                        <button
+                            class="remove"
+                            type="button"
+                            onclick="removeItem(${index})">
+
+                            🗑️
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        `).join("");
+
+    }
+
+
+    const total =
+        cart.reduce(
+            (sum,item) =>
+                sum +
+                Number(item.price) *
+                Number(item.quantity),
+            0
+        );
+
+
+    document.getElementById(
+        "cartTotal"
+    ).textContent =
+        formatPrice(total);
+
+}
+
+
+/* =========================
+   CAMBIAR CANTIDAD
+========================= */
+
+function changeQuantity(index,change){
+
+    if(!cart[index]){
+        return;
+    }
+
+
+    cart[index].quantity += change;
+
+
+    if(cart[index].quantity <= 0){
+
+        cart.splice(index,1);
+
+    }
+
+
+    saveCart();
+
+}
+
+
+/* =========================
+   ELIMINAR
+========================= */
+
+function removeItem(index){
+
+    cart.splice(index,1);
+
+    saveCart();
+
+    showToast(
+        "Producto eliminado"
+    );
+
+}
+
+
+/* =========================
+   ABRIR CARRITO
+========================= */
+
+function openCart(){
+
+    updateCart();
+
+    document
+        .getElementById("cartOverlay")
+        .classList.add("active");
+
+}
+
+
+/* =========================
+   CERRAR CARRITO
+========================= */
+
+function closeCart(){
+
+    document
+        .getElementById("cartOverlay")
+        .classList.remove("active");
+
+}
+
+
+/* =========================
+   CERRAR AL TOCAR FUERA
+========================= */
+
+function closeCartOutside(event){
+
+    if(
+        event.target.id ===
+        "cartOverlay"
+    ){
+
+        closeCart();
+
+    }
+
+}
+
+
+/* =========================
+   CHECKOUT WHATSAPP
+========================= */
+
+function checkout(){
+
+    if(cart.length === 0){
+
+        showToast(
+            "Tu carrito está vacío"
+        );
+
+        return;
+
+    }
+
+
+    let message =
+        "Hola CCTV PRO Bolivia, quiero realizar un pedido:%0A%0A";
+
+
+    cart.forEach(item => {
+
+        message +=
+            "• " +
+            item.name +
+            " x" +
+            item.quantity +
+            " - " +
+            formatPrice(
+                item.price *
+                item.quantity
+            ) +
+            "%0A";
+
+    });
+
+
+    const total =
+        cart.reduce(
+            (sum,item) =>
+                sum +
+                Number(item.price) *
+                Number(item.quantity),
+            0
+        );
+
+
+    message +=
+        "%0ATotal: " +
+        formatPrice(total);
+
+
+    window.open(
+        "https://wa.me/" +
+        WHATSAPP_NUMBER +
+        "?text=" +
+        message,
+        "_blank"
+    );
+
+}
+
+
+/* =========================
+   CONTACTO
+========================= */
+
+function sendMessage(event){
+
+    event.preventDefault();
+
+
+    const name =
+        document.getElementById(
+            "name"
+        ).value.trim();
+
+
+    const phone =
+        document.getElementById(
+            "phone"
+        ).value.trim();
+
+
+    const message =
+        document.getElementById(
+            "message"
+        ).value.trim();
+
+
+    const text =
+        "Hola CCTV PRO Bolivia.%0A%0A" +
+
+        "Nombre: " +
+        encodeURIComponent(name) +
+
+        "%0ATeléfono: " +
+        encodeURIComponent(phone) +
+
+        "%0A%0AMensaje: " +
+        encodeURIComponent(message);
+
+
+    window.open(
+        "https://wa.me/" +
+        WHATSAPP_NUMBER +
+        "?text=" +
+        text,
+        "_blank"
+    );
+
+}
+
+
+/* =========================
+   MENÚ MÓVIL
+========================= */
+
+function toggleMenu(){
+
+    document
+        .getElementById("navLinks")
+        .classList.toggle("active");
+
+}
+
+
+/* Cerrar menú al seleccionar */
+
+document
+    .querySelectorAll(".nav-links a")
+    .forEach(link => {
+
+        link.addEventListener(
+            "click",
+            () => {
+
+                document
+                    .getElementById("navLinks")
+                    .classList.remove("active");
+
+            }
+        );
+
+    });
+
+
+/* =========================
+   NOTIFICACIONES
+========================= */
+
+function showToast(message){
+
+    const toast =
+        document.getElementById(
+            "toast"
+        );
+
+
+    toast.textContent = message;
+
+
+    toast.classList.add("show");
+
+
+    setTimeout(() => {
+
+        toast.classList.remove("show");
+
+    },2500);
+
+}
+
+
+/* =========================
+   AÑO
+========================= */
+
+document.getElementById(
+    "year"
+).textContent =
+    new Date().getFullYear();
+
+
+/* =========================
+   INICIO
+========================= */
+
+renderProducts();
+
+updateCart();
+
+</script>
+
+</body>
+</html>
